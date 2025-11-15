@@ -18,6 +18,17 @@ app.get('/', (req, res) => {
   res.send('Welcome to the REST API!');
 });
 
+
+app.get("/health/db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ status: "ok", time: result.rows[0].now });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ status: "error", message: err.message });
+  }
+});
+
 // Rutas de usuarios
 app.use('/users', usersRoutes);
 
