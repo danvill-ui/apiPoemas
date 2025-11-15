@@ -44,10 +44,10 @@ app.use((req, res, next) => {
 
 
 // Importación y uso de rutas (Asegúrate de que estas rutas usen req.pool para consultar)
-// const usersRoutes = require('./routes/users');
-// const poemaRoute = require('./routes/poema');
-// const autorRoute = require('./routes/autor');
-// const palabraRoute = require('./routes/palabra');
+ const usersRoutes = require('./routes/users');
+const poemaRoute = require('./routes/poema');
+ const autorRoute = require('./routes/autor');
+ const palabraRoute = require('./routes/palabra');
 
 // Ruta base
 app.get('/', (req, res) => {
@@ -67,7 +67,7 @@ app.get("/health/db", async (req, res) => {
   }
 });
 
-/*
+
 // Rutas de usuarios (Descomentar cuando estén implementadas)
 app.use('/users', usersRoutes);
 
@@ -79,7 +79,7 @@ app.use('/autor',autorRoute)
 
 //Rutas de palabra
 app.use('/palabra',palabraRoute)
-*/
+
 
 // Iniciar servidor
 app.listen(port, () => {
