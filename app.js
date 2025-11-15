@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Ruta base
 app.get('/', (req, res) => {
-  res.send('Welcome to the REST API!');
+  res.send('Bievenidos a los poemas');
 });
 
 
