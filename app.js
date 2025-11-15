@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // ← Asegúrate de importar cors si lo necesitas
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const usersRoutes = require('./routes/users');
 const poemaRoute = require('./routes/poema');
 const autorRoute = require('./routes/autor');
